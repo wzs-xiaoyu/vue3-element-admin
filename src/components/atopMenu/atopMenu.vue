@@ -2,7 +2,7 @@
   <div :class="isIcon ? 'atop-menu-icon' : 'atop-menu'">
     <el-menu :default-active="currentMenu" class="el-menu-demo" mode="horizontal" :router="true" @select="handleSelect">
       <template v-if="menuList.length > 0">
-        <amenu-tree :list="menuList"></amenu-tree>
+        <amenu-tree :list="menuList" :isIcon="isIcon"></amenu-tree>
       </template>
     </el-menu>
   </div>
@@ -112,6 +112,15 @@ export default {
     .el-menu-item.is-active {
       border-bottom: 2px solid #ed455d;
       background-color: #fdecef;
+    }
+    .vertical {
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
     }
   }
   .el-menu--horizontal .el-submenu.is-active .el-submenu__title {

@@ -9,7 +9,7 @@
             <span :class="[isCollapse ? 'notitle' : '']">{{ item.name }}</span>
           </div>
         </template>
-        <menus-tree :list="item.children" />
+        <menus-tree :list="item.children" :isCollapse="isCollapse" :isIcon="isIcon" />
       </el-submenu>
       <el-menu-item v-if="!isNotEmpty(item.children) && isIcon" :index="item.path || item.name">
         <i :class="item.icon" v-if="item.icon"></i>
